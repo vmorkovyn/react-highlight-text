@@ -1,5 +1,5 @@
 import React from 'react';
-import { getTermStartIndex, getMatchTerms } from './utils';
+import { getTermMatches, getMatchTerms } from './utils';
 
 const HighlightText = ({ text, searchQuery, className, style = {} }) => {
     if (!(searchQuery && text)) {
@@ -7,15 +7,12 @@ const HighlightText = ({ text, searchQuery, className, style = {} }) => {
     }
     const elements = [];
     getMatchTerms(text, searchQuery).forEach((term, i) => {
-        const startTermIndex = getTermStartIndex(text, term);
-        const endTermIndex = startTermIndex + term.length;
-        text = text.substr(endTermIndex);
-        if (startTermIndex) {
-            const beforeMatchedText = text.substr(0, startTermIndex);
-            elements.push(
-                <span key={`beforeMatchedText${term}${i}`}>
-                    {beforeMatchedText}
-                </span>
+        const { startIndex, endIndex } = getTermMatches(text, term);
+        if (startIndex) {
+            const beforeMatchedText = text.slice(0, startIndex);
+            elements.push(<span key={`beforeMatchedText${term}${i}`}>
+                {beforeMatchedText}
+            </span>
             );
         }
         elements.push(
@@ -23,6 +20,7 @@ const HighlightText = ({ text, searchQuery, className, style = {} }) => {
                 {term}
             </span>
         );
+        text = text.substr(endIndex);
     });
     if (text) {
         elements.push(<span key={text}>{text}</span>);

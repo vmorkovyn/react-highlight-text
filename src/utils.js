@@ -2,14 +2,20 @@ export function quoteString(rawString) {
     return rawString.replace(/([.?*+^$[(){}|\\])/g, '\\$1');
 }
 
-export function getTermStartIndex(text, term) {
+export function getTermMatches(text, term) {
     const pattern = new RegExp(`${quoteString(term)}`, 'gi');
-    const match = pattern.exec(text);
-    if (!match) {
-        return 0;
+    const matches = pattern.exec(text);
+    if (!matches) {
+        return {
+            startIndex: 0,
+            endIndex: 0,
+        };
     }
 
-    return match.index;
+    return {
+        startIndex: matches.index,
+        endIndex: matches.index + term.length,
+    };
 }
 
 export function getMatchTerms(text, searchQuery) {
