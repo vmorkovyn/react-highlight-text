@@ -5,13 +5,6 @@ export function quoteString(rawString) {
 export function getTermMatches(text, term) {
     const pattern = new RegExp(`${quoteString(term)}`, 'gi');
     const matches = pattern.exec(text);
-    if (!matches) {
-        return {
-            startIndex: 0,
-            endIndex: 0,
-        };
-    }
-
     return {
         startIndex: matches.index,
         endIndex: matches.index + term.length,
