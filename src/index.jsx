@@ -13,13 +13,13 @@ const HighlightText = ({ text, searchQuery, className, style = {} }) => {
         if (startTermIndex) {
             const beforeMatchedText = text.substr(0, startTermIndex);
             elements.push(
-                <span key={`nonMatch${term}${i}`}>
+                <span key={`beforeMatchedText${term}${i}`}>
                     {beforeMatchedText}
                 </span>
             );
         }
         elements.push(
-            <span key={`match${term}${i}`} className={className} style={style}>
+            <span key={`term${term}${i}`} className={className} style={style}>
                 {term}
             </span>
         );
