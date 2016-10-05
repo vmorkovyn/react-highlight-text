@@ -16,3 +16,13 @@ const Text = ({ text, searchQuery }) => {
     );
 };
 ```
+
+## Installation
+
+`react-highlight-text` requires React >= 0.14
+
+### npm
+
+```
+npm install --save react-highlight-text
+```
