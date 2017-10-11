@@ -1,6 +1,6 @@
 {
   "name": "react-highlight-text",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Highlight text react",
   "main": "lib/index.js",
   "scripts": {
@@ -23,7 +23,7 @@
     "url": "git+https://github.com/Lex0ne/react-highlight-text.git"
   },
   "author": "",
-  "license": "ISC",
+  "liclsse": "ISC",
   "bugs": {
     "url": "https://github.com/Lex0ne/react-highlight-text/issues"
   },
@@ -37,12 +37,13 @@
     "babel-preset-stage-0": "^6.5.0",
     "eslint": "^2.9.0",
     "eslint-config-loris": "^4.0.0",
-    "react": "^0.14.8",
-    "react-dom": "^0.14.8",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "webpack": "^1.12.14"
   },
   "peerDependencies": {
-    "react": "^0.14.8 || ^15.0.0",
-    "react-dom": "^0.14.8 || ^15.0.0"
+    "react": "^0.14.8 || ^15.0.0 || 16.x",
+    "react-dom": "^0.14.8 || ^15.0.0 || 16.x"
   }
 }
