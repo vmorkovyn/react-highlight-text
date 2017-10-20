@@ -1,13 +1,14 @@
 import React from 'react';
-import { getTermMatches, getMatchTerms } from './utils';
+import pt from 'prop-types';
+import {getTermMatches, getMatchTerms} from './utils';
 
-const HighlightText = ({ text, searchQuery, className, style = {} }) => {
+const HighlightText = ({text, searchQuery, className, style = {}}) => {
     if (!(searchQuery && text)) {
         return <span>{text}</span>;
     }
     const elements = [];
     getMatchTerms(text, searchQuery).forEach((term, i) => {
-        const { startIndex, endIndex } = getTermMatches(text, term);
+        const {startIndex, endIndex} = getTermMatches(text, term);
         if (startIndex) {
             const beforeMatchedText = text.slice(0, startIndex);
             elements.push(<span key={`beforeMatchedText${term}${i}`}>
@@ -29,10 +30,10 @@ const HighlightText = ({ text, searchQuery, className, style = {} }) => {
 };
 
 HighlightText.propTypes = {
-    text: React.PropTypes.string,
-    searchQuery: React.PropTypes.string,
-    className: React.PropTypes.any,
-    style: React.PropTypes.object,
+    text: pt.string,
+    searchQuery: pt.string,
+    className: pt.any,
+    style: pt.object
 };
 
 export default HighlightText;
