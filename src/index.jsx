@@ -1,5 +1,5 @@
 import React from 'react';
-import pt from 'prop-types';
+import PropTypes from 'prop-types';
 import {getTermMatches, getMatchTerms} from './utils';
 
 const HighlightText = ({text, searchQuery, className, style = {}}) => {
@@ -30,10 +30,10 @@ const HighlightText = ({text, searchQuery, className, style = {}}) => {
 };
 
 HighlightText.propTypes = {
-    text: pt.string,
-    searchQuery: pt.string,
-    className: pt.any,
-    style: pt.object
+    text: PropTypes.string,
+    searchQuery: PropTypes.string,
+    className: PropTypes.any,
+    style: PropTypes.object
 };
 
 export default HighlightText;

@@ -7,11 +7,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import HighlightText from 'react-highlight-text';
 
-const Text = ({ text, searchQuery }) => {
+const Text = () => {
     const style = { backgroundColor: 'yellow' };
     return (
         <div>
-            <HighlightText text={text} searchQuery={searchQuery} style={style} />
+            <HighlightText text={'example text'} searchQuery={'text'} style={style} />
+            <HighlightText text={'example text'} searchQuery={'exam'} style={style} />
         </div>
     );
 };
