@@ -1,3 +1,5 @@
+[![npm downloads](https://img.shields.io/npm/dm/react-highlight-text.svg?style=flat-square)](https://www.npmjs.com/package/react-highlight-text)
+
 # react-highlight-text
 
 ## Quick start
